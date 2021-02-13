@@ -1,11 +1,11 @@
 #!/bin/bash
 
-
-if [ $# -eq 0];
+if [ -z "$1" ]
 then
-    echo "Domain Name argument not received"
+    echo "Domain name argument not received."
     exit 1
-else
+elif [ -z "$2" ]
+then
     # DOWNLOAD CERTBOT
     sudo apt install certbot python3-certbot-nginx
 
@@ -13,6 +13,7 @@ else
     sudo ufw allow "Nginx Full"
 
     # CREATE A SSL CERTIFICATE
-    sudo certbot --nginx -d $1 -d www.$1 && echo "Congratulation HTTPS is enabled for $1" || echo "Make sure your nginx has a server_name"
-    exit 0
+    sudo certbot --nginx -d ${@: -1} -d www.${@: -1} && echo "Congratulation HTTPS is enabled for ${@: -1}" || echo "Make sure your nginx file has a server_name $1"
+else 
+    echo "Expect 1 argument."
 fi

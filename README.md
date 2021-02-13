@@ -14,11 +14,7 @@ https://github.com/KKKaneki/Nginx-Automated-Lets-Encrypt.git
 ```bash
 cd Nginx-Automated-Lets-Encrypt
 chmod +x run.sh
-sudo ./run.sh your_domain_name.com
+./run.sh your_domain_name.com
 ```
 This will ask you to choose to renew the certificate or reinstall the exisiting certificate. Choose whatever's best for you.
 Again it will ask you whether you want to redirect HTTP traffic to HTTPS or not. Redirect HTTP to HTTPS will most probably will be the best option
-
-
-
-
