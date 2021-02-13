@@ -13,6 +13,6 @@ else
     sudo ufw allow "Nginx Full"
 
     # CREATE A SSL CERTIFICATE
-    sudo certbot --nginx -d $1 -d www.$1 && echo "Congratulation HTTPS is enabled for $1" || echo "Make sure your nginx has a domain"
+    sudo certbot --nginx -d $1 -d www.$1 && echo "Congratulation HTTPS is enabled for $1" || echo "Make sure your nginx has a server_name"
     exit 0
 fi
