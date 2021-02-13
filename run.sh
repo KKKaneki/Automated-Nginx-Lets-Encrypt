@@ -7,6 +7,6 @@ sudo apt install certbot python3-certbot-nginx
 sudo ufw allow "Nginx Full"
 
 # CREATE A SSL CERTIFICATE
-sudo certbot --nginx -d $0 -d www.$0
+sudo certbot --nginx -d $1 -d www.$1
 
-echo "Congratulation HTTPS is enabled for $0"
+echo "Congratulation HTTPS is enabled for $1"
